@@ -1,0 +1,154 @@
+{% extends "navbar.html" %}
+
+
+{% block body %}
+<style>
+
+body {
+    
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #333333;
+    font-family: 'Arial', sans-serif;
+    background-color: rgb(244,247,253);
+}
+
+/* Container styling */
+.entry-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+/* Card styling */
+.card {
+    /* Slightly transparent background */
+    background: linear-gradient(to right, rgba(236,220,217), rgba(236,220,217)); 
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Card header styling */
+.card-header {
+    /* background-color: #5BC0DE; */
+    border-bottom: none;
+    border-radius: 15px 15px 0 0;
+}
+
+/* Button styling */
+.btn-custom {
+    background-color: #5BC0DE;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.btn-custom:hover {
+    background-color: #31A2C2;
+    color: #FFFFFF;
+}
+
+/* Form input styling */
+.form-control {
+    border-radius: 10px;
+    padding: 12px;
+    font-size: 1.1rem;
+}
+
+/* Form label styling */
+.form-label {
+    font-weight: bold;
+    color: #333333;
+}
+
+/* Alert styling */
+.alert {
+    border-radius: 10px;
+}
+
+/* Link styling */
+a {
+    color: #5BC0DE;
+}
+
+a:hover {
+    color: #31A2C2;
+}
+
+/* Heading styling */
+h2 {
+    font-weight: bold;
+    /* color: #FFFFFF; */
+}
+
+.text-outline {
+    color: #DE5499; /* Your text color */
+    text-shadow: 
+        -1px -1px 0 #000000,  
+         1px -1px 0 #000000,
+        -1px 1px 0 #000000,
+         1px 1px 0 #000000; /* Outline color */
+}
+
+/* Margin for the text below button */
+.text-center {
+    margin-top: 10px;
+}
+
+/* Margin for the text below button */
+p {
+    margin-top: 10px;
+}
+.btn-register {
+    padding: 15px;
+    margin: 25px 0px;
+    width: 100%;
+    font-size: 15px;
+    background: #DE5499;
+    border-radius: 10px;
+    font-weight: 800;
+    box-shadow: 3px 3px 0px 0px #E99F4C;
+  }
+  
+  .btn-register:hover {
+    opacity: .9;
+  }
+
+</style>
+<div class="container mt-5 gradient-bg">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card shadow-lg">
+                <div class="card-header text-center text-outline">
+                    <h2>Add New Entry</h2>
+                </div>
+                <div class="card-body">
+                    <form method="POST">
+                        {% if error_msg %}
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            {{error_msg}}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                        {% endif %}
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <label for="title" class="form-label">Title</label>
+                            <input type="text" class="form-control" id="title" name="title">
+                        </div>
+                        <div class="mb-3">
+                            <label for="content" class="form-label">Content</label>
+                            <textarea class="form-control" id="content" name="content" rows="5"></textarea>
+                        </div>
+
+                        <div class="container text-center">
+                            <button class="btn-register ">ADD ENTRY</button>
+                        </a></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock body %}

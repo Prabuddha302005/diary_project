@@ -1,0 +1,132 @@
+    {% extends "navbar.html" %}
+    {% load static %}
+    {% block title %}Welcome to LifeScribe{% endblock title %}
+    {% block stylesheet %}
+            <!-- <link href="{% static "css/globals.css" %}" rel="stylesheet"> -->
+    {% endblock stylesheet %}
+    {% block body %}
+
+<style>
+body {
+    /* background: linear-gradient(to right, #eeea7b, #c7e023); */
+    background-color: #F5F5DC;
+
+    color: black;
+}
+.container {
+    margin-top: 50px;
+    text-align: center;
+}
+.btn-custom {
+    background-color: #00c6ff;
+    border-color: #00c6ff;
+}
+.btn-custom:hover {
+    background-color: #eceff2;
+    color: black;
+    border-color: #0072ff;
+}
+.card {
+    border: none;
+    border-radius: 15px; 
+    font-weight: 900;
+}
+
+/* .card-body {
+    color: white;
+} */
+.lead{
+    font-size: x-large;
+    font-weight: 900;
+}
+
+.btn-register {
+    padding: 15px;
+    margin: 25px 0px;
+    width: 290px;
+    font-size: 15px;
+    background: #DE5499;
+    border-radius: 10px;
+    font-weight: 800;
+    box-shadow: 3px 3px 0px 0px #E99F4C;
+  }
+  
+  .btn-register:hover {
+    opacity: .9;
+  }
+
+  .text-outline {
+    color: #DE5499; /* Your text color */
+    text-shadow: 
+        -1px -1px 0 #000000,  
+         1px -1px 0 #000000,
+        -1px 1px 0 #000000,
+         1px 1px 0 #000000; /* Outline color */
+}
+
+
+ 
+    </style>
+<div class="container">
+
+
+{% if messages %}
+{% for message in messages %}
+{% if message %}
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+   {{message}}
+   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% endif %}
+{% endfor %}
+{% endif %}
+</div>
+    <div class="container">
+      <h1 class="display-2 text-outline fw-bold">Welcome to LifeScribe</h1>
+      <p class="lead">Your personal space to jot down daily thoughts, experiences, and memories.</p>
+      <hr class="my-4">
+      <p class="lead">Start capturing your life's moments today!</p>
+      
+    
+        <div>
+            <a href="/register"><button class="btn-register ">SIGN UP NOW <i class="bi bi-arrow-right "></i></button></a>
+        </div>
+        
+    
+  </div>
+  
+  <div class="container mt-5">
+      <div class="row">
+          <div class="col-md-4 mt-3">
+              <div class="card mb-4 shadow-sm h-100">
+                  <div class="card-body">
+                      <h5 class="card-title">Secure and Private</h5>
+                      <p class="card-text">Your entries are encrypted and only accessible by you.</p>
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-4 mt-3">
+              <div class="card mb-4 shadow-sm h-100">
+                  <div class="card-body">
+                      <h5 class="card-title">Easy to Use</h5>
+                      <p class="card-text">A user-friendly interface that makes journaling a breeze.</p>
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-4 mt-3">
+              <div class="card mb-4 shadow-sm h-100">
+                  <div class="card-body">
+                      <h5 class="card-title">Save memories</h5>
+                      <p class="card-text">Keep your memories safe and accessible anytime.</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  {% endblock body %}
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
+</html>

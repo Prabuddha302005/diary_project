@@ -1,0 +1,39 @@
+{% extends "navbar.html" %}
+{% load static %}
+{% block stylesheet %}
+<link href="{% static "css/register.css" %}" rel="stylesheet">
+{% endblock stylesheet %}
+{% block body %}
+
+
+<div class="container mt-3 col-md-6 ">
+    <div class="form_area w-100">
+        <p class="title">SIGN UP</p>
+        <form method="POST">
+            {% if error_msg %}
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            {{error_msg}}
+                            <button type="button" class="btn-register -close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                        {% endif %}
+                        {% csrf_token %}
+            <div class="form_group">
+                <label class="sub_title" for="username">Username</label>
+                <input placeholder="Enter username" class="form_style" type="text" id="username" name="username">
+            </div>
+            <div class="form_group">
+                <label class="sub_title" for="password">Password</label>
+                <input placeholder="Enter your password" id="password" name="password" class="form_style" type="password">
+            </div>
+            <div class="form_group">
+                <label class="sub_title" for="cpassword">Password</label>
+                <input placeholder="Enter your password" id="cpassword" name="cpassword" class="form_style" type="password">
+            </div>
+            <div>
+                <button class="btn-register ">SIGN UP</button>
+                <p>Have an Account? <a class="link" href="/login">Login Here!</a></p><a class="link" href="">
+            </a></div><a class="link" href="">
+        
+    </a></form></div><a class="link" href="">
+</a></div>
+{% endblock body %}

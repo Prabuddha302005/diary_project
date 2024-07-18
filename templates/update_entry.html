@@ -1,0 +1,51 @@
+{% extends "navbar.html" %}
+
+
+{% block body %}
+
+<style>
+    body {
+        background-color: #F7F5F2;
+        color: #333333;
+    }
+    .entry-container {
+        max-width: 600px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #FFFFFF;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .btn-custom {
+        background-color: #F88379;
+        color: #FFFFFF;
+    }
+    .btn-custom:hover {
+        background-color: #333333;
+        color: #FFFFFF;
+    }
+</style>
+<div class="container entry-container">
+        <h2 class="text-center">Add New Entry</h2>
+        <form method="post">
+            {% if  error_msg %}
+             
+         <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            {{error_msg}}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+
+          {% endif %}
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="title" class="form-label">Title</label>
+                <input type="text" class="form-control" id="title" name="title" value="{{entry.title}}">
+            </div>
+            <div class="mb-3">
+                <label for="content" class="form-label">Content</label>
+                <textarea class="form-control" id="content" name="content" rows="5">{{entry.content}}</textarea>
+            </div>
+            <button type="submit" class="btn btn-custom w-100">Update Entry</button>
+        </form>
+    </div>
+{% endblock body %}
