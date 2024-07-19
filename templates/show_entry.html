@@ -1,4 +1,5 @@
 {% extends "navbar.html" %}
+{% block title %}Show Entries{% endblock title %}
 
 {% block body %}
 <style>
@@ -151,6 +152,11 @@
     list-style-type: none;
 
     }
+
+    button-hover:hover{
+        background-color: #3c4142;
+        color: white;
+    }
 </style>
 <div class="container mt-2">
     <div class="row justify-content-center">
@@ -193,12 +199,16 @@
           </ul>
         </li>
     </div>
-    <div class="text-end">
+    <div class="text-end ">
+        <li class="nav-item">
+            <a class="nav-link fst-italic" href="/" style="color: #DE5499; font-weight: 700;">Welcome, {{user.username | title}}</a>
+          </li>
         <a href="/add-entry">
+            
             <button class="btn-register text-center">Add new entry</button>
         </a>
     </div>
-<h2 class="text-center mb-3">Your entries</h2>
+<h2 class="display-6 text-outline fw-bold text-center mb-3" style="color: #DE5499;">Your entries</h2>
 
 <div class="row container text-center   mt-5">
     {% if error_msg %}
@@ -264,10 +274,14 @@
             </div>
         </div>
     </div>
+
+    
     {% endfor %}
 
 
 </div>
 </div>
+
+
 
 {% endblock body %}

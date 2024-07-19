@@ -1,5 +1,6 @@
 {% extends "navbar.html" %}
 
+{% block title %}update Entry{% endblock title %}
 
 {% block body %}
 
@@ -16,14 +17,21 @@
         border-radius: 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
-    .btn-custom {
-        background-color: #F88379;
-        color: #FFFFFF;
-    }
-    .btn-custom:hover {
-        background-color: #333333;
-        color: #FFFFFF;
-    }
+    .btn-register {
+    padding: 15px;
+    margin: 25px 0px;
+    width: 290px;
+    font-size: 15px;
+    background: #DE5499;
+    border-radius: 10px;
+    font-weight: 800;
+    box-shadow: 3px 3px 0px 0px #E99F4C;
+  }
+  
+  .btn-register:hover {
+    opacity: .9;
+  }
+  
 </style>
 <div class="container entry-container">
         <h2 class="text-center">Add New Entry</h2>
@@ -45,7 +53,7 @@
                 <label for="content" class="form-label">Content</label>
                 <textarea class="form-control" id="content" name="content" rows="5">{{entry.content}}</textarea>
             </div>
-            <button type="submit" class="btn btn-custom w-100">Update Entry</button>
+            <button type="submit" class="btn-register w-100">Update Entry</button>
         </form>
     </div>
 {% endblock body %}

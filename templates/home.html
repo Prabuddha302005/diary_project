@@ -10,10 +10,10 @@
 body {
     /* background: linear-gradient(to right, #eeea7b, #c7e023); */
     background-color: #F5F5DC;
-
+    overflow-x: hidden;
     color: black;
 }
-.container {
+.container1 {
     margin-top: 50px;
     text-align: center;
 }
@@ -81,21 +81,21 @@ body {
 {% endfor %}
 {% endif %}
 </div>
-    <div class="container">
-      <h1 class="display-2 text-outline fw-bold">Welcome to LifeScribe</h1>
+    <div class="container1">
+      <h1 class="display-2 text-outline fw-bold" style="text-shadow: 2px 2px rgb(163, 156, 156);">Welcome to LifeScribe</h1>
       <p class="lead">Your personal space to jot down daily thoughts, experiences, and memories.</p>
       <hr class="my-4">
       <p class="lead">Start capturing your life's moments today!</p>
       
     
         <div>
-            <a href="/register"><button class="btn-register ">SIGN UP NOW <i class="bi bi-arrow-right "></i></button></a>
+            <a href="/register"><button class="btn-register">SIGN UP NOW <i class="bi bi-arrow-right "></i></button></a>
         </div>
         
     
   </div>
   
-  <div class="container mt-5">
+  <div class="container1 mt-5">
       <div class="row">
           <div class="col-md-4 mt-3">
               <div class="card mb-4 shadow-sm h-100">
@@ -123,6 +123,37 @@ body {
           </div>
       </div>
   </div>
+
+  <footer class=" py-4 mt-4" style=" border-radius: 18px; box-shadow: -5px -5px 20px 2px #888888;">
+    <div class="container">
+        <div class="row">
+                <h5>About LifeScribe</h5>
+                <p>LifeScribe helps you capture your daily thoughts and moments. Keep your memories safe and accessible anytime.</p>
+            </div>
+            <div class="col-md-4">
+                <h5>Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="/" class="text-dark">Home</a></li>
+                    <li><a href="/show-entry" class="text-dark">My Diary</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h5>Developer</h5>
+                <ul class="list-unstyled">
+                     <li><i class="bi bi-code-slash"></i> Developed by Prabuddha Chunchekar</li>
+                    <li><a style="color: #727686; text-decoration: none;"href="https://www.instagram.com/prabuddhachunchekar/" target="_blank"><i class="bi bi-instagram"></i> instagram </a></li>
+                    <li><a style="color: #727686; text-decoration: none;"href="https://www.linkedin.com/in/prabuddha-chunchekar-2847881aa/" target="_blank"><i class="bi bi-linkedin"></i> LinkedIn</a></li>
+                    <li><a style="color: #727686; text-decoration: none;"href="https://prabuddha302005.github.io/responsive-Portfolio/index.html" target="_blank"><i class="bi bi-person-fill"></i>Portfolio</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col text-center">
+                <p class="text-muted">&copy; 2024 LifeScribe. All Rights Reserved.</p>
+            </div>
+        </div>
+    </div>
+</footer>
   {% endblock body %}
 
 
